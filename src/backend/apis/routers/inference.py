@@ -2,11 +2,11 @@ from fastapi import APIRouter, Depends
 
 
 # FIX PARAMETER 
-TAGS = [""] # Wait to using Settings
-GROUP = ""
-PREFIX = ""
+TAGS = ["Infer"] # Wait to using Settings
+GROUP = "Infer"
+PREFIX = "/Infer"
 
-app = APIRouter(prefix='/infer')
+app = APIRouter(prefix=PREFIX)
 
 # TODO : Need more plan with it.
 # Using to Chat with AI
