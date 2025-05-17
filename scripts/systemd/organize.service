@@ -1,0 +1,16 @@
+# See https://medium.com/@benmorel/creating-a-linux-service-with-systemd-611b5c8b91d6
+
+[Unit]
+Description=Oraganize AI service
+After=network.target
+StartLimitIntervalSec=0
+
+#TODO: Wait to change
+[Service]
+Restart=always
+RestartSec=5
+User=root
+ExecStart=
+
+[Install]
+WantedBy=multi-user.target
