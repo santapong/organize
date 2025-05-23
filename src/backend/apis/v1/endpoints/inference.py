@@ -4,12 +4,12 @@ from fastapi import APIRouter, Depends
 # FIX PARAMETER 
 TAGS = ["Infer"] # Wait to using Settings
 GROUP = "Infer"
-PREFIX = "/Infer"
+PREFIX = "/infer"
 
-app = APIRouter(prefix=PREFIX)
+router = APIRouter()
 
 # TODO : Need more plan with it.
 # Using to Chat with AI
-@app.get("/ai")
+@router.get("/inference")
 def inference():
     pass

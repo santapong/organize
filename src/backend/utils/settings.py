@@ -31,7 +31,6 @@ class SettingsLLM(BaseSettings):
             kwargs=kwargs
         )
         
-
 # Using for Loading DB .env
 class SettingsDB(BaseSettings):
     
@@ -60,7 +59,17 @@ class SettingsMCP(BaseSettings):
 class SettingsA2A(BaseSettings):
     pass
 
+# Using for Setting LOG
+class SettingsLog(BaseSettings):
+    
+    level: str = Field(alias="LOG_LEVEL", default="INFO")
+    location: str = Field(alias="LOG_LOCATION", default="/logs")
+    rotation: str = Field(alias="LOG_ROTATION", default="200")
+    max_byte: str = Field(alias="LOG_MAX_BYTES", default="1000")
+    format: str = Field(alias="LOG_FORMAT", default="%(levelname)s:%(name)s:%(message)s"  )
+
+
 if __name__ == "__main__":
-    test = SettingsLLM()
+    test = SettingsLog()
     
     print(test.model_dump())

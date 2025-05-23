@@ -6,10 +6,10 @@ TAGS = ["Dashboard"] # Wait to using Settings
 GROUP = "Dashboard"
 PREFIX = "/dashboard"
 
-app = APIRouter(prefix=PREFIX)
+router = APIRouter()
 
 # TODO : Need more plan with it.
 # Using to Chat with AI
-@app.get("/test")
-def inference():
+@router.get("/dashboard")
+def dashboard():
     pass
