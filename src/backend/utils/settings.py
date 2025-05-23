@@ -19,11 +19,16 @@ class SettingsLLM(BaseSettings):
     top_p : float = Field(alias="LLM_TOP_P", default=0.5)
     
     # get LLM by Default
-    def get_model(self):
+    def get_model(self, **kwargs):
+        """
+        Getting model from setting.
+        
+        """
         return init_chat_model(
             model=self.model,
             model_provider=self.model_provider,
             base_url=self.base_url,
+            kwargs=kwargs
         )
         
 
@@ -38,7 +43,7 @@ class SettingsDB(BaseSettings):
     
     def get_postgres_uri(self):
         return f"postgresql+psycopg2://{self.username}:{self.password}@{self.host}:{self.port}/{self.name}"
-
+ 
 # Using for Loading API .env
 class SettingsAPI(BaseSettings):
     pass

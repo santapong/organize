@@ -14,5 +14,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 2. MCP Tools
 3. Agent Card (Agent Resume)
 4. Agent Policy (Nemo Guardrail)
-5. Frontend Interact + Dashboard
-6. Mind Maps
+5. Frontend Interact + Dashboard ( CoiplotKits )
+6. Road Maps
