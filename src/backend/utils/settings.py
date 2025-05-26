@@ -1,3 +1,5 @@
+import typing
+
 from pydantic import (
     AliasChoices,
     Field,
@@ -45,7 +47,13 @@ class SettingsDB(BaseSettings):
  
 # Using for Loading API .env
 class SettingsAPI(BaseSettings):
-    pass
+    
+    origins_raw: str = Field(alias="SERVER_ORIGINS")
+
+    @property
+    def origins(self):
+        return [origin.strip() for origin in self.origins_raw.split(",")]
+
 
 # Using for Cache.
 class SettingsCache(BaseSettings):
@@ -70,6 +78,6 @@ class SettingsLog(BaseSettings):
 
 
 if __name__ == "__main__":
-    test = SettingsLog()
+    test = SettingsAPI()
     
-    print(test.model_dump())
+    print(test.origins)

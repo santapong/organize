@@ -4,13 +4,16 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from src.backend.apis import v1
+from src.backend.utils.settings import SettingsAPI
 
 app = FastAPI()
 
+# Class Settings API
+# Origins: Str Read from .env
 
 # Config CORS
 origins = [
-    "http://localhost:9001" # DEV Environment
+    SettingsAPI().origins # DEV Environment
 ]
 
 # Add middleware
@@ -22,6 +25,7 @@ app.add_middleware(
     allow_headers=["*"], # Allow header
 )
 
+# Adding Router /api/v1 
 app.include_router(
     router=v1.router, 
     prefix=v1.PREFIX,
