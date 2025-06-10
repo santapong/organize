@@ -6,7 +6,6 @@ readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "alembic>=1.15.2",
-    "fastapi>=0.115.12",
     "ipykernel>=6.29.5",
     "langchain>=0.3.25",
     "langchain-community>=0.3.21",
@@ -18,7 +17,7 @@ dependencies = [
     "nemo-toolkit[all]>=2.3.0",
     "pydantic>=2.11.4",
     "python-a2a>=0.5.4",
-    "python-dotenv>=1.1.0",
     "sqlalchemy>=2.0.40",
+    "stripe>=12.2.0",
     "uvicorn>=0.34.2",
 ]
