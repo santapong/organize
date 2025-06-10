@@ -6,7 +6,6 @@ readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "alembic>=1.15.2",
-    "copilotkit[langgraph]>=0.1.46",
     "fastapi>=0.115.12",
     "ipykernel>=6.29.5",
     "langchain>=0.3.25",
@@ -15,6 +14,7 @@ dependencies = [
     "langchain-openai>=0.3.17",
     "langgraph>=0.4.5",
     "langgraph-cli>=0.2.10",
+    "litestar>=2.16.0",
     "nemo-toolkit[all]>=2.3.0",
     "pydantic>=2.11.4",
     "python-a2a>=0.5.4",

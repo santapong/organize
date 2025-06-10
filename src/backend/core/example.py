@@ -2,7 +2,7 @@ from langchain.chat_models import init_chat_model
 
 from langgraph.prebuilt import create_react_agent
 
-from src.backend.utils.settings import SettingsLLM
+from backend.config.settings import SettingsLLM
 
 configLLM = SettingsLLM()
 
