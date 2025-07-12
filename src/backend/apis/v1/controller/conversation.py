@@ -1,17 +1,25 @@
-from litestar import Controller, get, patch, put, post, delete
+from litestar import Controller, get, post, put, delete
 
-# TODO: Wait for DTO
 class ConversationController(Controller):
-    """
-    Using asking Agentic Model or Let Model Talk to eachother
-    
-    """
-    path = "/Conversation"
+    base_path = "/tasks"
     
     @get()
-    async def get_conversation(self):
-        return {}
+    async def get_conversation(self) -> None:
+        pass
     
-    @post()
-    async def talk_to_team(self):
-        return {}
+    @get(path="/{conversation_id:int}")
+    async def get_converstaion_id(self) -> None:
+        pass
+    
+    @put(path="/{conversation_id:int}")
+    async def create_conversation(self) -> None:
+        pass
+    
+    @post(path="/{conversation_id:int}")
+    async def update_conversation(self) -> None:
+        pass
+    
+    @delete(path="/{conversation_id:int}")
+    async def delete_conversation(self) -> None:
+        pass
+    

@@ -1,13 +1,28 @@
-from litestar import Controller, Litestar, get, post, delete, patch
+from litestar import Controller, get ,post, put, delete
+from litestar.contrib.opentelemetry import OpenTelemetryConfig, OpenTelemetryPlugin
 
-# TODO: Wait for DTO
-class MetricController(Controller):
-    """
-    Using for get Insight Data.
-    """
-    path = "/Metric"
-    
+# TODO: Learning Opentelemetry.
+from pydantic import BaseModel
+
+class Metric(BaseModel):
+    pass
+
+
+class HealthController(Controller):
+    base_path = "/healthcheck"
+
     @get()
-    async def test(self) -> dict:
-        return {"Hello": "Hello"}
+    async def service_healthcheck(self) -> None:
+        pass
+    
+    
+    @get(path="/{agent_id:int}")
+    async def agent_healthcheck(self) -> None:
+        pass
+    
+class MetricController(Controller):
+    
+    raise NotImplementedError("Not implement yet.")
+
+
     

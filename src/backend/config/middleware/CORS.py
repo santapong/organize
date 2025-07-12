@@ -1,6 +1,6 @@
 from litestar.config.cors import CORSConfig
 
-from src.backend.config.settings import SettingsAPI
+from backend.config.settings import SettingsAPI
 
 origin = [
     SettingsAPI().origins
